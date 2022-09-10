@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Float property</title>
     <style>
-        *{
+        * {
             box-sizing: border-box;
         }
-        .parent{
-            width:100%;
-            float:center;
+
+        .parent {
+            width: 100%;
+            float: center;
         }
-        .header{
+
+        .header {
             text-align: center;
             background-color: rgb(245, 197, 114);
             border: 2px solid brown;
             color: white;
-            padding:10px;
+            padding: 10px;
         }
-        .left{
+
+        .left {
             width: 20%;
             height: 600px;
             background-color: darkcyan;
             border: 2px solid blue;
-            float:left;
+            float: left;
         }
-        .center{
+
+        .center {
             width: 60%;
             height: 600px;
             background-color: rgb(219, 21, 206);
             border: 2px solid rgb(151, 235, 48);
             float: left;
         }
-        .right{
+
+        .right {
             width: 20%;
             height: 600px;
             background-color: rgb(239, 101, 16);
             border: 2px solid rgb(20, 177, 191);
             float: left;
         }
-        .footer{
+
+        .footer {
             text-align: center;
             background-color: rgb(7, 183, 48);
             border: 2px solid rgb(214, 5, 5);
             color: rgb(3, 0, 0);
             padding: 20px;
         }
-        .vertical{
+
+        .vertical {
             list-style-type: none;
             margin: 0;
             margin-top: 20px;
@@ -59,7 +67,8 @@
             height: 100%;
 
         }
-        li a.verticalnav{
+
+        li a.verticalnav {
             display: block;
             color: darkblue;
             text-align: left;
@@ -67,85 +76,228 @@
             text-decoration: none;
             font-size: larger;
         }
-        li a.verticalnav:hover{
+
+        li a.verticalnav:hover {
             background-color: aquamarine;
         }
-        #active{
-            background-color: purple;
-        }
 
-        p::first-letter{
+        /* #active{
+            background-color: purple;
+        } */
+
+        p::first-letter {
             color: red;
             font-size: 25px;
             font-weight: bold;
         }
-        p::first-line{
+
+        p::first-line {
             color: blue;
         }
-        p::selection{
+
+        p::selection {
             color: blue;
             background-color: aquamarine;
         }
-        ::marker{
+
+        ::marker {
             color: chartreuse;
         }
-        body{
+
+        body {
             background-image: url("4.webp");
             background-attachment: fixed;
             background-size: cover;
         }
-        .transition{
+
+        .transition {
             width: 100px;
             height: 100px;
             transition: width 2s height 2s, transform 1s;
         }
-        .transition:hover{
-            width:300px;
-            height:200px;
+
+        .transition:hover {
+            width: 300px;
+            height: 200px;
             transform: rotate(360deg);
+        }
+
+        /*Media Queries*/
+        @media screen and (max-width:1000px) {
+            iframe {
+                height: 80px;
+                width: 80px;
+            }
+
+            li a.verticalnav {
+                display: block;
+                color: rgb(139, 0, 139);
+                text-align: left;
+                padding: 5px 5px;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            img {
+                display: none;
+            }
+
+            .ul_media {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:800px) {
+            iframe {
+                height: 100px;
+                width: 100px;
+            }
+
+            li a.verticalnav {
+                display: block;
+                color: rgb(0, 139, 7);
+                text-align: left;
+                padding: 5px 5px;
+                text-decoration: none;
+                font-size: 10px;
+            }
+            .left,.right,.center{
+                width: 100%;
+
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+            .media {
+                display: none;
+            }
+
+            img {
+                display: none;
+            }
+
+            .ul_media {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            iframe {
+                height: 50px;
+                width: 50px;
+            }
+            .responsive{
+                display: flex;flex-direction:column
+            }
+
+            li a.verticalnav {
+                display: block;
+                color: rgb(139, 0, 0);
+                text-align: left;
+                padding: 5px 5px;
+                text-decoration: none;
+                font-size: 8px;
+            }
+
+            p {
+                font-size: 8px;
+            }
+
+            .media {
+                display: none;
+            }
+
+            img {
+                display: none;
+            }
+
+            .ul_media {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="parent">
         <div class="header">
-            <h2>ONLINE TRAINING</h2>
+            <h2>TECHNICAL COURSE TRAINING</h2>
         </div>
-        <div>
+        <div class="responsive">
             <div class="left">
                 <UL class="vertical">
                     <li><a id="active" class="verticalnav" href="index.html" target="_blank">HTML BASIC TAGS</a></li>
-                    <li><a class="verticalnav"href="forms.html" target="_blank">HTML form TAGS</a></li>
-                    <li ><a class="verticalnav">CSS TYPES</a></li>
-                    <li ><a class="verticalnav" href="selectors.html" target="_blank">CSS SELECTORS</a></li>
-                    <li ><a class="verticalnav">CSS BORDER PROPERTIES</a></li>
-                    <li ><a class="verticalnav">CSS FLOAT</a></li>
-                    <li ><a class="verticalnav">CSS ANIMATION</a></li>
-                    <li ><a class="verticalnav">CSS TEXT PROPERTIES</a></li>
-                    <li ><a class="verticalnav">CSS NAVIGATION</a></li>
-                    <li ><a class="verticalnav">CSS TRANSITION</a></li>
-                    <li><a class="verticalnav">CSS MEDIA QUERIES</a></li>
+                    <li><a class="verticalnav" href="forms.html" target="_blank">HTML REGESTRAION FORM</a></li>
+                    <li><a class="verticalnav" href="https://www.w3schools.com/html/" target="_blank">HTML COURSE</a>
+                    </li>
+                    <li><a class="verticalnav" href="https://www.youtube.com/watch?v=WGJJIrtnfpk" target="_blank">PYTHON
+                            COURSE</a></li>
+                    <li><a class="verticalnav" href="https://www.w3schools.com/css/default.asp" target="_blank">CSS
+                            COURSE</a></li>
+                    <li><a class="verticalnav" href="https://www.simplilearn.com/learn-java-basics-skillup"
+                            target="_blank"> JAVA COURSE</a></li>
+                    <li><a class="verticalnav" href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp"
+                            target="_blank">BOOTSTRAP COURSE</a></li>
+
                 </ul>
             </div>
             <div class="center">
-            <p><img src="1.jpg" alt="HTML" height="100px" width="150px">Though the English Wikipedia reached three million articles in August 2009, the growth of the edition, in terms of the numbers of new articles and of editors, appears to have peaked around early 2007.[40] Around 1,800 articles were added daily to the encyclopedia in 2006; by 2013 that average was roughly 800.[41] A team at the Palo Alto Research Center attributed this slowing of growth to the project's increasing exclusivity and resistance to change.[42] </p>
-            <p><img src="1.jpg" alt="HTML" height="100px" width="150px" style="float: left">Though the English Wikipedia reached three million articles in August 2009, the growth of the edition, in terms of the numbers of new articles and of editors, appears to have peaked around early 2007.[40] Around 1,800 articles were added daily to the encyclopedia in 2006; by 2013 that average was roughly 800.[41] A team at the Palo Alto Research Center attributed this slowing of growth to the project's increasing exclusivity and resistance to change.[42] </p>
-            <p><img src="1.jpg" alt="HTML" height="100px" width="150px" style="float:right">Though the English Wikipedia reached three million articles in August 2009, the growth of the edition, in terms of the numbers of new articles and of editors, appears to have peaked around early 2007.[40] Around 1,800 articles were added daily to the encyclopedia in 2006; by 2013 that average was roughly 800.[41] A team at the Palo Alto Research Center attributed this slowing of growth to the project's increasing exclusivity and resistance to change.[42] </p>
-        </div> 
+                <p><img src="HTML.webp" alt="HTML" height="100px" width="150px">The HyperText Markup Language or HTML is
+                    the standard markup language for documents designed to be displayed in a web browser. It can be
+                    assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as
+                    JavaScript.
+
+                    Web browsers receive HTML documents from a web server or from local storage and render the documents
+                    into multimedia web pages. HTML describes the structure of a web page semantically and originally
+                    included cues for the appearance of the document. </p>
+                <p><img src="CSS.webp" alt="HTML" height="100px" width="150px" style="float: left">Cascading Style
+                    Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in
+                    HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should
+                    be rendered on screen, on paper, in speech, or on other media.
+
+                    CSS is among the core languages of the open web and is standardized across Web browsers according to
+                    W3C specifications. Previously, the development of various parts of CSS specification was done
+                    synchronously, which allowed the versioning of the latest recommendations.</p>
+                <p><img src="BOOTSTRAP.webp" alt="HTML" height="100px" width="150px" style="float:left">Bootstrapping is
+                    any test or metric that uses random sampling with replacement (e.g. mimicking the sampling process),
+                    and falls under the broader class of resampling methods. Bootstrapping assigns measures of accuracy
+                    (bias, variance, confidence intervals, prediction error, etc.) to sample estimates.[1][2] This
+                    technique allows estimation of the sampling distribution of almost any statistic using random
+                    sampling methods.[3][4]</p>
+                <p><img src="js.webp" alt="HTML" height="100px" width="150px"style="float:left">JavaScript (JS) is a lightweight, interpreted,
+                        or just-in-time compiled programming language with first-class functions. While it is most well-known as
+                        the scripting language for Web pages, many non-browser environments also use it, such as Node.js, Apache
+                        CouchDB and Adobe Acrobat. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic
+                        language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles.
+                        Read more about JavaScript.</p>
+            </div>
+            
             <div class="right">
-                <iframe width="270" height="240" style="margin-left:20px;margin-top: 20px;" src="https://www.dlite.com" frameborder="0" ></iframe>
-                <iframe width="270" height="240" style="margin-left:20px;margin-top: 20px;" src="https://www.dlite.com" frameborder="0" ></iframe>
+                <iframe width="270" height="240" style="margin-left:20px;margin-top: 20px;"
+                    src="y2mate.com - HTML explained in 5 minutes_v240P.mp4" frameborder="0"poster="css.webp"></iframe>
+                <iframe width="270" height="240" style="margin-left:20px;margin-top: 20px;"
+                    src="y2mate.com - Learn CSS in only 150 seconds_480p.mp4" frameborder="0"></iframe>
             </div>
-            </div>
+        </div>
         <div class="footer">
-            <h2>&copy; www.abcshopping.com</h2>
+            <h2>&copy; www.TECHNICALCOURSES.com</h2>
             <h3>contact</h3>
             <ul style="text-align: left">
                 <li>49478954978</li>
                 <li>93478954978</li>
             </ul><br>
+            <img class="transition" src="HTML.webp" height="100px" width="100px" alt="html">
             <img class="transition" src="5.webp" height="100px" width="100px" alt="css">
-            </div>
+            <img class="transition" src="js.webp" height="100px" width="100px" alt="js">
+
+        </div>
     </div>
 </body>
+
 </html>
